@@ -3,12 +3,12 @@ package boardgame;
 public class Position {
 	//atributos
 	private int row;
-	private int colum;
+	private int column;
 	
 	//contrutor
-	public Position(int row, int colum) {
+	public Position(int row, int column) {
 		this.row = row;
-		this.colum = colum;
+		this.column = column;
 	}
 	//gett e sett
 	public int getRow() {
@@ -19,18 +19,22 @@ public class Position {
 		this.row = row;
 	}
 
-	public int getColum() {
-		return colum;
+	public int getColumn() {
+		return column;
 	}
 
-	public void setColum(int colum) {
-		this.colum = colum;
+	public void setColumn(int column) {
+		this.column = column;
+	}
+	public void setValues(int row , int column ) {
+		this.row = row;
+		this.column = column;
 	}
 	//toString 
 	@Override
 	public String toString() {
 		
-		return row + ", " + colum;
+		return row + ", " + column;
 		
 	}
 }
