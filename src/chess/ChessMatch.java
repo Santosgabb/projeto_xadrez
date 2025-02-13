@@ -33,10 +33,13 @@ public class ChessMatch {
 		Piece capturePiece = makeMove(source, target);
 		return (ChessPiece) capturePiece;
 	}
-	
+	//validação da peça de origem
 	private void validateSourcePosition(Position position) {
 		if (!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source position");
+		}
+		if(!board.piece(position).isThereAnyPossibleMove()) {
+			throw new ChessException("There is no piece on source position | Não existe movimento possivel para a peça escolhida");
 		}
 	}
 	private Piece makeMove(Position source, Position target) {
